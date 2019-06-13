@@ -57,6 +57,27 @@ class EntityTest extends UnitTestCase {
                ->method('getUserId')
                ->willReturn(123);
 
+    $this->assertTrue(
+          method_exists($socialPost, 'getProviderUserId'),
+            'SocialPost does not implements getProviderUserId function/method'
+    );
+    $this->assertTrue(
+          method_exists($socialPost, 'getPluginId'),
+            'SocialPost does not implements getPluginId function/method'
+    );
+    $this->assertTrue(
+          method_exists($socialPost, 'getName'),
+            'SocialPost does not implements getName function/method'
+    );
+    $this->assertTrue(
+          method_exists($socialPost, 'getId'),
+            'SocialPost does not implements getId function/method'
+    );
+    $this->assertTrue(
+          method_exists($socialPost, 'getUserId'),
+            'SocialPost does not implements getUserId function/method'
+    );
+
     $this->assertSame('drupalUser', $socialPost->getProviderUserId());
     $this->assertSame('implementerName', $socialPost->getPluginId());
     $this->assertSame('providerName', $socialPost->getName());
